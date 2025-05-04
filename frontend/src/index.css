@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+:root {
+  /* Primary Palette */
+  --primary-50:  #f5f5f5;
+  --primary-100: #e6e6e6;
+  --primary-200: #cccccc;
+  --primary-300: #b3b3b3;
+  --primary-400: #999999;
+  --primary-500: #808080;
+  --primary-600: #666666;
+  --primary-700: #4d4d4d;
+  --primary-800: #333333;
+  --primary-900: #1a1a1a;
+  --primary-950: #0d0d0d;
+
+  /* Accent Palette */
+  --accent-50:  #fff1f1;
+  --accent-100: #ffe1e1;
+  --accent-200: #ffc7c7;
+  --accent-300: #ffa0a0;
+  --accent-400: #ff7a7a;
+  --accent-500: #ff5252;
+  --accent-600: #ff3939;
+  --accent-700: #ff1f1f;
+  --accent-800: #ff0808;
+  --accent-900: #e50000;
+  --accent-950: #c70000;
+
+  /* Gold Palette */
+  --gold-50:  #fefae0;
+  --gold-100: #fdf7c3;
+  --gold-200: #fcef85;
+  --gold-300: #fae147;
+  --gold-400: #f7cf1b;
+  --gold-500: #e2ba0d;
+  --gold-600: #c49509;
+  --gold-700: #9c700a;
+  --gold-800: #825a10;
+  --gold-900: #704b13;
+
+  /* Font Families */
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Animation */
+  --animation-float: float 6s ease-in-out infinite;
+}
+
+body {
+  @apply bg-black text-white;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-800);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-700);
+}
+
+/* Custom button styles */
+.btn {
+  @apply py-2 px-4 rounded-md transition-all duration-300 font-medium;
+}
+
+/* Variants */
+.btn-primary {
+  background-color: var(--accent-700);
+  /* @apply hover:bg-accent-800 text-white; */
+}
+
+.btn-secondary {
+  /* @apply bg-primary-800 hover:bg-primary-700 text-white border border-accent-600; */
+}
+
+.btn-gold {
+  /* @apply bg-gold-600 hover:bg-gold-700 text-primary-950; */
+}
+
+/* Product card */
+.product-card {
+  /* @apply bg-primary-900 rounded-lg overflow-hidden transition-all duration-300
+         hover:transform hover:scale-[1.02] hover:shadow-lg hover:shadow-accent-900/30; */
+}
+
+/* Input field */
+.input-field {
+  /* @apply bg-primary-800 border border-primary-700 rounded-md py-2 px-3 w-full
+         focus:outline-none focus:ring-2 focus:ring-accent-600 text-white placeholder-primary-400; */
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
