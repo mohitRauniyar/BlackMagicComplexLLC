@@ -1,5 +1,5 @@
-@tailwind base;
-@tailwind components;
+/* @tailwind base;
+@tailwind components; */
 @tailwind utilities;
 @import "tailwindcss";
 
@@ -85,27 +85,44 @@ h1, h2, h3, h4, h5, h6 {
 /* Variants */
 .btn-primary {
   background-color: var(--accent-700);
-  /* @apply hover:bg-accent-800 text-white; */
+  @apply text-white;
+}
+.btn-primary:hover{
+  background-color: var(--accent-800);
 }
 
 .btn-secondary {
-  /* @apply bg-primary-800 hover:bg-primary-700 text-white border border-accent-600; */
+  @apply text-white border;
+  background-color: var(--primary-800);
+  border-color: var(--accent-600);
+}
+.btn-secondary:hover{
+  background-color: var(--accent-700);
 }
 
 .btn-gold {
   /* @apply bg-gold-600 hover:bg-gold-700 text-primary-950; */
+  background-color: var(--gold-600);
+  
+}
+.btn-gold:hover{
+    background-color: var(--gold-700);
 }
 
 /* Product card */
 .product-card {
-  /* @apply bg-primary-900 rounded-lg overflow-hidden transition-all duration-300
-         hover:transform hover:scale-[1.02] hover:shadow-lg hover:shadow-accent-900/30; */
+  @apply rounded-lg overflow-hidden transition-all duration-300
+         hover:transform hover:scale-[1.02] hover:shadow-lg;
+         background-color: var(--primary-900);
 }
+
 
 /* Input field */
 .input-field {
-  /* @apply bg-primary-800 border border-primary-700 rounded-md py-2 px-3 w-full
-         focus:outline-none focus:ring-2 focus:ring-accent-600 text-white placeholder-primary-400; */
+  @apply /* bg-primary-800 */ border /* border-primary-700 */ rounded-md py-2 px-3 w-full
+         focus:outline-none focus:ring-2 /* focus:ring-accent-600 */ text-white /* placeholder-primary-400 */;
+  background-color: var(--primary-800);
+  border-color: var(--primary-700);
 }
 
 /* Animation utility classes */

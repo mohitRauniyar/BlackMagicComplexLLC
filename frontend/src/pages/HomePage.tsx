@@ -85,12 +85,13 @@ const HomePage = () => {
         </div>
         
         {/* 3D Model */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="w-full h-full max-w-2xl">
-            <Canvas shadows camera={{ position: [0, 0, 5], fov: 45 }}>
+        <div className="absolute inset-0 flex items-center justify-start z-10">
+          <div className="w-full h-full">
+            <Canvas shadows camera={{ position: [0, 1, 4], fov: 45 }}>
               <Suspense fallback={null}>
                 <ambientLight intensity={0.5} />
-                <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
+                <spotLight position={[10, -5, 2]} angle={0.15} penumbra={1} intensity={5} castShadow />
+                {/* <directionalLight position={[5, 10, 5]} intensity={1} castShadow /> */}
                 <PresentationControls
                   global
                   // rotation={[0, 0, 0]}
@@ -99,13 +100,16 @@ const HomePage = () => {
                   // config={{ mass: 2, tension: 400 }}
                   // snap={{ mass: 4, tension: 400 }}
                 >
+
                   <PerfumeModel />
+                  {/* <Environment preset="city" background /> */}
                 </PresentationControls>
                 <Environment preset="city" />
               </Suspense>
             </Canvas>
           </div>
         </div>
+        
         
         {/* Hero content */}
         <div className="container mx-auto px-4 relative z-20 text-center">
@@ -224,7 +228,7 @@ const HomePage = () => {
                 className="input-field flex-grow"
                 required
               />
-              <button type="submit" className="btn btn-accent-600 whitespace-nowrap">
+              <button type="submit" className="btn btn-gold whitespace-nowrap">
                 Subscribe
               </button>
             </form>
