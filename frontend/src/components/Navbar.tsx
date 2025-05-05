@@ -51,10 +51,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white hover:text-accent-400 transition-colors">Home</Link>
-            <Link to="/products" className="text-white hover:text-accent-400 transition-colors">Shop</Link>
+            <Link to="/" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Home</Link>
+            <Link to="/products" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Shop</Link>
             {user?.isAdmin && (
-              <Link to="/admin" className="text-white hover:text-accent-400 transition-colors">Admin</Link>
+              <Link to="/admin" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Admin</Link>
             )}
           </nav>
 

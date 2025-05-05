@@ -8,6 +8,7 @@ import PerfumeModel from '../components/PerfumeModel';
 import axios from 'axios';
 import { ProductType } from '../types';
 import React from 'react';
+import RevolvingModel from '../components/RevolvingModel';
 
 
 const HomePage = () => {
@@ -74,6 +75,7 @@ const HomePage = () => {
 
   return (
     <div className="overflow-x-hidden">
+      <img src="/waves2.svg" className='w-full absolute top-0' alt="" />
       <motion.div 
         ref={heroRef}
         style={{ opacity, scale }}
@@ -85,13 +87,14 @@ const HomePage = () => {
         </div>
         
         {/* 3D Model */}
-        <div className="absolute inset-0 flex items-center justify-start z-10">
+        {/* <div className="absolute inset-0 flex items-center justify-start z-10">
           <div className="w-full h-full">
-            <Canvas shadows camera={{ position: [0, 1, 4], fov: 45 }}>
+            <Canvas shadows camera={{ position: [0, 0, 4], fov: 45 }}>
               <Suspense fallback={null}>
                 <ambientLight intensity={0.5} />
                 <spotLight position={[10, -5, 2]} angle={0.15} penumbra={1} intensity={5} castShadow />
-                {/* <directionalLight position={[5, 10, 5]} intensity={1} castShadow /> */}
+                <spotLight position={[-10, -5, 2]} angle={0.15} penumbra={1} intensity={5} castShadow />
+                
                 <PresentationControls
                   global
                   // rotation={[0, 0, 0]}
@@ -102,22 +105,58 @@ const HomePage = () => {
                 >
 
                   <PerfumeModel />
-                  {/* <Environment preset="city" background /> */}
                 </PresentationControls>
                 <Environment preset="city" />
               </Suspense>
             </Canvas>
           </div>
-        </div>
-        
+        </div> */}
+
+
+<div className="absolute inset-0 flex items-center justify-start z-10">
+  <div className="w-full h-full">
+    <Canvas shadows camera={{ position: [0, 0, 4], fov: 45 }}>
+      <Suspense fallback={null}>
+        <ambientLight intensity={0.5} />
+        <spotLight position={[10, -5, 2]} angle={0.15} penumbra={1} intensity={5} castShadow />
+        <spotLight position={[-10, -5, 2]} angle={0.15} penumbra={1} intensity={5} castShadow />
+
+        <PresentationControls global>
+          {/* Multiple Revolving Models */}
+          <RevolvingModel 
+            modelPath="/3dModels/sauvage_perfume.glb" 
+            revolutionRadius={1} 
+            initialOffset={[-1.5, 0, 0]} 
+            revolutionSpeed={0.1}
+            scale={11}
+            floating
+            initialAngle={90}
+          />
+          
+          <RevolvingModel 
+            modelPath="/3dModels/perfume_bottle_triangle.glb" 
+            revolutionRadius={1} 
+            initialOffset={[1, -1.2, 0]} 
+            scale={3}
+            revolutionSpeed={0.05}
+            initialAngle={45}
+          />
+        </PresentationControls>
+
+        <Environment preset="city" />
+      </Suspense>
+    </Canvas>
+  </div>
+</div>
+
         
         {/* Hero content */}
-        <div className="container mx-auto px-4 relative z-20 text-center">
+        <div className="container px-4 relative flex justify-end z-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl text-center"
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-accent-400 text-transparent bg-clip-text">
               Discover Your Signature Scent
@@ -126,7 +165,7 @@ const HomePage = () => {
               Exquisite fragrances that capture the essence of luxury and individuality
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/products" className="btn btn-primary px-8 py-3 text-lg flex items-center justify-center">
+              <Link to="/products" className="btn btn-primary btn-black px-8 py-3 text-lg flex items-center justify-center">
                 Shop Now <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <a href="#featured" className="btn btn-secondary px-8 py-3 text-lg">
@@ -145,7 +184,7 @@ const HomePage = () => {
       </motion.div>
 
       {/* Featured section */}
-      <section id="featured" className="py-20 bg-primary-900">
+      <section id="featured" className="py-20 bg-primary-900 mt-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Featured Collections</h2>

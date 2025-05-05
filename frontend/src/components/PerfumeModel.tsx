@@ -68,31 +68,36 @@
 // export default PerfumeModel;
 
 
-
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { Mesh } from 'three';
 
-const PerfumeModel = ({ rotationSpeed = 0.003 }) => {
+const PerfumeModel = ({ rotationSpeed = 0.003, revolutionRadius = 1, revolutionSpeed = 0.2 }) => {
   const group = useRef<Mesh>(null);
 
   // Load the GLTF model
   const { scene } = useGLTF('/3dModels/sauvage_perfume.glb');
 
-  let time = 0;
+  let angle = 0;
 
   useFrame((state, delta) => {
     if (group.current) {
-      time += delta;
-      group.current.rotation.y += rotationSpeed;
-      group.current.rotation.z += rotationSpeed/3;
-      // group.current.rotation.x = Math.sin(time) * 0.05; // gentle up-down rocking
+      // Self rotation
+      group.current.rotation.y += rotationSpeed * 1.5;
+      group.current.rotation.z += rotationSpeed / 10;
+
+      // Revolution
+      angle += delta * revolutionSpeed;
+      const x = Math.cos(angle) * revolutionRadius;
+      const z = Math.sin(angle) * revolutionRadius;
+      group.current.position.set(x-1, 0, z);
     }
   });
+
   if(window.innerWidth >= 1200)
-   return <primitive ref={group} object={scene} scale={11} position={[-1.8, 0, 0]} />;
-  return <primitive ref={group} object={scene} scale={11} position={[0, 0, 0]} />;
+    return <primitive ref={group} object={scene} scale={11} position={[-2.0, 0, 0]} />;
+   return <primitive ref={group} object={scene} scale={11} position={[0, 0, 0]} />;
 };
 
 export default PerfumeModel;

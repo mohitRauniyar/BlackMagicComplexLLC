@@ -90,6 +90,10 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary:hover{
   background-color: var(--accent-800);
 }
+.btn-black:hover{
+  background-color: #4e0000;
+  @apply text-white
+}
 
 .btn-secondary {
   @apply text-white border;
