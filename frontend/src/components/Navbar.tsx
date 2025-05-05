@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useCart } from '../contexts/CartContext';
+import React from 'react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,14 +50,7 @@ const Navbar = () => {
             <span className="text-xl md:text-2xl font-bold text-accent-500 font-serif">Luxe Scent</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Home</Link>
-            <Link to="/products" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Shop</Link>
-            {user?.isAdmin && (
-              <Link to="/admin" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Admin</Link>
-            )}
-          </nav>
+         
 
           {/* Search form - desktop */}
           <div className="hidden md:block relative w-1/4">
@@ -71,6 +65,18 @@ const Navbar = () => {
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-primary-400" />
             </form>
           </div>
+
+           {/* Desktop Navigation */}
+           <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Home</Link>
+            <Link to="/products" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Collections</Link>
+            <Link to="/contact" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Contact Us</Link>
+
+
+            {user?.isAdmin && (
+              <Link to="/admin" className="text-white hover:bg-black px-2 py-1 rounded-lg transition-colors">Admin</Link>
+            )}
+          </nav>
 
           {/* Right section with icons */}
           <div className="flex items-center space-x-4">
@@ -122,7 +128,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary-900 py-4 px-4 animate-fade-in">
+        <div className="md:hidden bg-primary-900/60 backdrop-blur-md py-4 px-4 animate-fade-in">
+
           <nav className="flex flex-col space-y-4 mb-4">
             <Link 
               to="/" 
@@ -136,7 +143,14 @@ const Navbar = () => {
               className="text-white hover:text-accent-400 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Shop
+              Collections
+            </Link>
+            <Link 
+              to="/contact" 
+              className="text-white hover:text-accent-400 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact Us
             </Link>
             {user?.isAdmin && (
               <Link 

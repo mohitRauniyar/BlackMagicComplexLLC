@@ -16,7 +16,7 @@ const Footer = () => {
               </a>
               <a href="#" className="text-primary-400 hover:text-accent-500 transition-colors">
                 <Instagram size={20} />
-              </a>22aa
+              </a>
               <a href="#" className="text-primary-400 hover:text-accent-500 transition-colors">
                 <Twitter size={20} />
               </a>
@@ -63,19 +63,19 @@ const Footer = () => {
           
           {/* Contact info */}
           <div>
-            <h4 className="text-white font-medium mb-4">Contact Us</h4>
-            <ul className="space-y-3 space-x-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-accent-500 mr-2 mt-0.5" />
+            <h4 className="text-white  font-medium mb-4">Contact Us</h4>
+            <ul className="space-y-3 space-x-3 flex flex-col">
+              <li className="flex gap-2 items-start">
+                <MapPin className="h-5 w-5 text-lg text-accent-500 mt-0.5" />
                 <span className="text-primary-300">2B St - Deira - Dubai - United Arab Emirates</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 text-accent-500 mr-2" />
+              <li className="flex gap-2 items-center">
+                <Phone className="text-lg h-5 w-5 text-accent-500" />
                 <span className="text-primary-300">+971 55 705 2240</span>
               </li>
-              <li className="flex items-center">
-                <Mail className="h-5 w-5 text-accent-500 mr-2" />
-                <span className="text-primary-300">info@blackmagiccomplexllc.com</span>
+              <li className="flex gap-2 items-center">
+                <Mail className=" text-lg h-5 w-5 text-accent-500" />
+                <span className="text-primary-300 text-wrap">info@blackmagiccomplexllc.com</span>
               </li>
             </ul>
           </div>
