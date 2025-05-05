@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
-
+import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-primary-950 border-t border-primary-800 pt-12 pb-6">
@@ -16,7 +16,7 @@ const Footer = () => {
               </a>
               <a href="#" className="text-primary-400 hover:text-accent-500 transition-colors">
                 <Instagram size={20} />
-              </a>
+              </a>22aa
               <a href="#" className="text-primary-400 hover:text-accent-500 transition-colors">
                 <Twitter size={20} />
               </a>
@@ -64,18 +64,18 @@ const Footer = () => {
           {/* Contact info */}
           <div>
             <h4 className="text-white font-medium mb-4">Contact Us</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 space-x-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-accent-500 mr-2 mt-0.5" />
-                <span className="text-primary-300">123 Perfume Lane, Fragrance City, FC 54321</span>
+                <span className="text-primary-300">2B St - Deira - Dubai - United Arab Emirates</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-accent-500 mr-2" />
-                <span className="text-primary-300">+1 (555) 123-4567</span>
+                <span className="text-primary-300">+971 55 705 2240</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-accent-500 mr-2" />
-                <span className="text-primary-300">info@luxescent.com</span>
+                <span className="text-primary-300">info@blackmagiccomplexllc.com</span>
               </li>
             </ul>
           </div>
@@ -83,7 +83,7 @@ const Footer = () => {
         
         <div className="border-t border-primary-800 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Luxe Scent Boutique. All rights reserved.
+            &copy; {new Date().getFullYear()}Black Magic Complex. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <img src="https://cdn-icons-png.flaticon.com/128/349/349230.png" alt="Visa" className="h-6" />
