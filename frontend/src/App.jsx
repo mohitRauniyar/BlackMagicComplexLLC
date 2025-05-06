@@ -12,6 +12,7 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminOrders from './pages/admin/AdminOrders';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminProtectedRoute from './components/AdminProtectedRoute';
+import Contact from './pages/ContactPage';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="verify-otp" element={<VerifyOtpPage />} />
+        <Route path="contact" element={<Contact />} />
+        
         
         <Route element={<ProtectedRoute />}>
           <Route path="checkout" element={<CheckoutPage />} />
