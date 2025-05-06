@@ -13,12 +13,35 @@ import AdminOrders from './pages/admin/AdminOrders';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminProtectedRoute from './components/AdminProtectedRoute';
 import Contact from './pages/ContactPage';
+import { useEffect, useState } from 'react';
+import Loader from './components/Loader';
 
-function App() {
+function App() { 
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const loadAssets = () => {
+      const loadTime = new Promise((resolve) => {
+        if (document.readyState === "complete") {
+          resolve();
+        } else {
+          window.addEventListener("load", resolve);
+        }
+      });
+
+      // Set a minimum duration of 2 seconds
+      const minimumDuration = new Promise((resolve) =>
+        setTimeout(resolve, 5000)
+      );
+
+      Promise.all([loadTime, minimumDuration]).then(() => setLoading(false));
+    };
+
+    loadAssets();
+  }, []);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<>{loading?<Loader/>:<HomePage />}</>} />
         <Route path="products" element={<ProductsPage />} />
         <Route path="products/:id" element={<ProductDetailPage />} />
         <Route path="cart" element={<CartPage />} />
