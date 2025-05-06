@@ -83,7 +83,7 @@ const Footer = () => {
         
         <div className="border-t border-primary-800 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-primary-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()}Black Magic Complex. All rights reserved.
+            &copy; {new Date().getFullYear()} Black Magic Complex. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <img src="https://cdn-icons-png.flaticon.com/128/349/349230.png" alt="Visa" className="h-6" />
