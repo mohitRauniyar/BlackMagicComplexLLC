@@ -92,7 +92,7 @@ const Shape: React.FC<ModelProps> = ({ color, wireframe = false, type, source })
 
 const Model3D: React.FC<ModelProps> = ({ color, wireframe, type, source }) => {
   return (
-    <div className="h-[400px] lg:h-[600px] w-full">
+    <div className="h-[300px] lg:h-[600px] w-full">
       <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
         <ambientLight intensity={2} />
         <directionalLight position={[5, 5, 5]} intensity={2} />

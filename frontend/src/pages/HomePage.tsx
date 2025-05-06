@@ -211,7 +211,7 @@ const HomePage = () => {
         </div>
       </motion.div>
 
-      <section id="corousel" className="mt-32">
+      <section id="corousel" className="mt-12 lg:mt-32">
         <Carousel />
       </section>
 

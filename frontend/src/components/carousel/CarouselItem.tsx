@@ -29,7 +29,7 @@ const CarouselItem = ({
           <Model3D color={modelColor} type={modelType} wireframe={wireframe} source={source} />
         </div>
       </div>
-      <div className="w-full lg:w-1/2 h-full flex flex-col justify-start gap-4 items-start p-8 pt-24">
+      <div className="w-full lg:w-1/2 h-full flex flex-col justify-start gap-4 items-start p-8 lg:pt-16">
         <h2 className="text-3xl font-bold mb-4 text-red-500">{title}</h2>
         <p className="text-gray-300 mb-6 text-left">
           {description}

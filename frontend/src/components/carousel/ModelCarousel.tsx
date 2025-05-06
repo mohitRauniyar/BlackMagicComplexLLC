@@ -58,7 +58,7 @@ const ModelCarousel = ({ items }: ModelCarouselProps) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-4 h-1 rounded-full transition-colors ${
+            className={`w-4 h-2 rounded-full transition-colors ${
               index === currentIndex ? "bg-red-500" : "bg-gray-700"
             }`}
             aria-label={`Go to slide ${index + 1}`}
