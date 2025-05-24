@@ -50,9 +50,10 @@ const Navbar = () => {
       <div className=" px-6 w-full">
         <div className="flex items-center justify-between h-20 w-full">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex gap-2 justify-between items-center">
+            <img src="/BlackMagicLogo.png" className="w-32 p-2" alt="" />
             <span className="text-xl md:text-2xl font-bold text-accent-500 font-serif">
-              Luxe Scent
+              Black Magic
             </span>
           </Link>
           <div className="flex justify-end gap-12 items-center w-5/6">
