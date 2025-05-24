@@ -15,8 +15,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand section */}
           <div>
+
             <h3 className="text-xl font-serif font-bold text-accent-500 mb-4">
-              Luxe Scent
+              Black Magic Complex
             </h3>
             <p className="text-primary-300 mb-4">
               Premium fragrances for the discerning individual. Discover your
